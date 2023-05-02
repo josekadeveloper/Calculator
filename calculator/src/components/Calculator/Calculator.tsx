@@ -46,24 +46,29 @@ const Calculator = () => {
   };
 
   const handleEqualClick = () => {
+    let result = 0;
     if (currentNumber !== null && previousNumber !== null && operator !== null) {
       switch (operator) {
         case ADD_OPERATOR:
-          setPreviousNumber(previousNumber + currentNumber);
+          result = previousNumber + currentNumber;
+          setInput(`(${previousNumber} ${operator} ${currentNumber}) = ${result}`);
           break;
         case SUBTRACT_OPERATOR:
-          setPreviousNumber(previousNumber - currentNumber);
+          result = previousNumber - currentNumber;
+          setInput(`(${previousNumber} ${operator} ${currentNumber}) = ${result}`);
           break;
         case MULTIPLY_OPERATOR:
-          setPreviousNumber(previousNumber * currentNumber);
+          result = previousNumber * currentNumber;
+          setInput(`(${previousNumber} ${operator} ${currentNumber}) = ${result}`);
           break;
         case DIVIDE_OPERATOR:
-          setPreviousNumber(previousNumber / currentNumber);
+          result = previousNumber / currentNumber;
+          setInput(`(${previousNumber} ${operator} ${currentNumber}) = ${result}`);
           break;
       }
 
-      setInput(previousNumber.toString());
-      setCurrentNumber(previousNumber);
+      setCurrentNumber(result);
+      setPreviousNumber(null);
       setOperator(null);
     }
   };
