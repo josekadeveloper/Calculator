@@ -9,9 +9,9 @@ body {
   font-family: monospace;
   background: linear-gradient(35deg, #404040 51.03%, #FF9500);
   color: $foreground;
-  margin: 50px auto;
   padding: 0 30px;
-  height: auto;
+  height: 100vh;
+  width: auto;
   display: flex;
   justify-content: center;
 }
@@ -19,32 +19,40 @@ body {
 .calculator-container {
   display: flex;
   flex-wrap: wrap;
-  width: 100px;
-  border: 1px solid $primary;
-  border-radius: 5px;
+  height: 700px;
+  width: 500px;
+  margin-top: 100px;
+  border: 5px solid $primary;
+  border-radius: 15px;
   padding: 20px;
 }
 
 .result {
-  width: 100px;
-  height: 20px;
+  width: 100%;
+  height: 50px;
   padding: 2px;
   margin-bottom: 5px;
+  background-color: $secondary;
   color: $disabled;
+  font-size: 35px;
   text-align: center;
   border: 0.5px solid $primary;
   border-radius: 5px;
 }
 
 .button {
-  background-color: transparent;
-  margin: 1px;
-  border: 0.5px solid $primary;
-  border-radius: 5px;
+  height: 100px;
+  width: 100px;
+  background-color: $secondary;
+  margin: 10px;
+  font-size: 30px;
+  border: 5px solid $primary;
+  border-radius: 15px;
   cursor: pointer;
 }
 
 .button:last-child {
+  width: 100%;
   align-items: center;
   margin-top: 5px;
   padding: 0 39px;
