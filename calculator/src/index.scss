@@ -1,13 +1,51 @@
+$primary: #FF9500;
+$secondary: #404040;
+$bg: #ffffff;
+$bg-accent: #e7e8e9;
+$disabled: #9c9c9c;
+$foreground: #2d264b;
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: monospace;
+  background: linear-gradient(35deg, #404040 51.03%, #FF9500);
+  color: $foreground;
+  margin: 50px auto;
+  padding: 0 30px;
+  height: auto;
+  display: flex;
+  justify-content: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.calculator-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100px;
+  border: 1px solid $primary;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.result {
+  width: 100px;
+  height: 20px;
+  padding: 2px;
+  margin-bottom: 5px;
+  color: $disabled;
+  text-align: center;
+  border: 0.5px solid $primary;
+  border-radius: 5px;
+}
+
+.button {
+  background-color: transparent;
+  margin: 1px;
+  border: 0.5px solid $primary;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:last-child {
+  align-items: center;
+  margin-top: 5px;
+  padding: 0 39px;
 }

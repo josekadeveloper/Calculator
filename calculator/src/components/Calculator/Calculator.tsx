@@ -74,27 +74,24 @@ const Calculator = () => {
   };
 
   return (
-    <div>
-      <div>{input}</div>
-      <button onClick={() => handleNumberClick(1)}>1</button>
-      <button onClick={() => handleNumberClick(2)}>2</button>
-      <button onClick={() => handleNumberClick(3)}>3</button>
-      <button onClick={() => handleOperatorClick("+")}>+</button>
-      <br />
-      <button onClick={() => handleNumberClick(4)}>4</button>
-      <button onClick={() => handleNumberClick(5)}>5</button>
-      <button onClick={() => handleNumberClick(6)}>6</button>
-      <button onClick={() => handleOperatorClick("-")}>-</button>
-      <br />
-      <button onClick={() => handleNumberClick(7)}>7</button>
-      <button onClick={() => handleNumberClick(8)}>8</button>
-      <button onClick={() => handleNumberClick(9)}>9</button>
-      <button onClick={() => handleOperatorClick("*")}>*</button>
-      <br />
-      <button onClick={() => handleNumberClick(0)}>0</button>
-      <button onClick={() => handleClearClick()}>C</button>
-      <button onClick={() => handleEqualClick()}>=</button>
-      <button onClick={() => handleOperatorClick("/")}>/</button>
+    <div className="calculator-container">
+      <div className="result">{input}</div>
+      <button className="button" onClick={() => handleNumberClick(1)}>1</button>
+      <button className="button" onClick={() => handleNumberClick(2)}>2</button>
+      <button className="button" onClick={() => handleNumberClick(3)}>3</button>
+      <button className="button" onClick={() => handleNumberClick(4)}>4</button>
+      <button className="button" onClick={() => handleNumberClick(5)}>5</button>
+      <button className="button" onClick={() => handleNumberClick(6)}>6</button>
+      <button className="button" onClick={() => handleNumberClick(7)}>7</button>
+      <button className="button" onClick={() => handleNumberClick(8)}>8</button>
+      <button className="button" onClick={() => handleNumberClick(9)}>9</button>
+      <button className="button" onClick={() => handleNumberClick(0)}>0</button>
+      <button className="button" onClick={() => handleOperatorClick("+")}>+</button>
+      <button className="button" onClick={() => handleOperatorClick("-")}>-</button>
+      <button className="button" onClick={() => handleOperatorClick("*")}>*</button>
+      <button className="button" onClick={() => handleOperatorClick("/")}>/</button>
+      <button className="button" onClick={() => handleClearClick()}>C</button>
+      <button className="button" onClick={() => handleEqualClick()}>=</button>
     </div>
   );
 };
