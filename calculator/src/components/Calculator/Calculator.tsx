@@ -22,28 +22,93 @@ const Calculator = () => {
     setInput("");
   }
 
+  const handleSqrt = () => {
+    try {
+      const result = Math.sqrt(parseFloat(input));
+      setInput(result.toString());
+    } catch (error) {
+      setInput('Error');
+    }
+  }
+
+  const handlePow = () => {
+    setInput(Math.pow(parseFloat(input), 2).toString());
+  };
+
+  const handleDelete = () => {
+    setInput(input.slice(0, -1));
+  }
+
+  const buttons = [
+    "ON", "OFF", "DEL", "C",
+    "(", ")", "√", "x²",
+    "1", "2", "3", "+",
+    "4", "5", "6", "-",
+    "7", "8", "9", "*",
+    ".", "0", "/", "=",
+  ];
+
   return (
     <div className="calculator-container">
       {<div className="result"> {input}<span>{active ? lastCharacter : ""}</span></div>}
-      <button className="button" onClick={() => turnOn()}>ON</button>
-      <button className="button" onClick={() => turnOff()}>OFF</button>
-      <button className="button" onClick={() => addInput(1)} disabled={!active}>1</button>
-      <button className="button" onClick={() => addInput(2)} disabled={!active}>2</button>
-      <button className="button" onClick={() => addInput(3)} disabled={!active}>3</button>
-      <button className="button" onClick={() => addInput("+")} disabled={!active}>+</button>
-      <button className="button" onClick={() => addInput(4)} disabled={!active}>4</button>
-      <button className="button" onClick={() => addInput(5)} disabled={!active}>5</button>
-      <button className="button" onClick={() => addInput(6)} disabled={!active}>6</button>
-      <button className="button" onClick={() => addInput("-")} disabled={!active}>-</button>
-      <button className="button" onClick={() => addInput(7)} disabled={!active}>7</button>
-      <button className="button" onClick={() => addInput(8)} disabled={!active}>8</button>
-      <button className="button" onClick={() => addInput(9)} disabled={!active}>9</button>
-      <button className="button" onClick={() => addInput("*")} disabled={!active}>*</button>
-      <button className="button" onClick={() => addInput(0)} disabled={!active}>0</button>
-      <button className="button" onClick={() => addInput(".")} disabled={!active}>.</button>
-      <button className="button" onClick={() => addInput("/")} disabled={!active}>/</button>
-      <button className="button" onClick={() => setInput("")} disabled={!active}>C</button>
-      <button className="button" onClick={() => expCalculate()} disabled={!active}>=</button>
+      <div className="buttons">
+        {buttons.map((button, index) => {
+          let buttonElement;
+
+          if (button === "ON") {
+            buttonElement = (
+              <button key={index} className="button" onClick={() => turnOn()}>
+                {button}
+              </button>
+            );
+          } else if (button === "OFF") {
+            buttonElement = (
+              <button key={index} className="button" onClick={() => turnOff()} disabled={!active}>
+                {button}
+              </button>
+            );
+          } else if (button === "DEL") {
+            buttonElement = (
+              <button key={index} className="button" onClick={() => handleDelete()} disabled={!active}>
+                {button}
+              </button>
+            );
+          } else if (button === "√") {
+            buttonElement = (
+              <button key={index} className="button" onClick={() => handleSqrt()} disabled={!active}>
+                {button}
+              </button>
+            );
+          } else if (button === "C") {
+            buttonElement = (
+              <button key={index} className="button" onClick={() => setInput("")} disabled={!active}>
+                {button}
+              </button>
+            );
+          } else if (button === "=") {
+            buttonElement = (
+              <button key={index} className="button" onClick={() => expCalculate()} disabled={!active}>
+                {button}
+              </button>
+            );
+          } else if (button === "x²") {
+            buttonElement = (
+              <button key={index} className="button" onClick={() => handlePow()} disabled={!active}>
+                {button}
+              </button>
+            );
+          } else {
+            buttonElement = (
+              <button key={index} className="button" onClick={() => addInput(button)} disabled={!active}>
+                {button}
+              </button>
+            );
+          }
+
+          return buttonElement;
+        })}
+      </div>
+
     </div>
   );
 };
