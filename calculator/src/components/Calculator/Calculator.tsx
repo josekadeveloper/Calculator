@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { ADD_OPERATOR, SUBTRACT_OPERATOR, MULTIPLY_OPERATOR, DIVIDE_OPERATOR } from "../../utils/Operator";
+import { useState } from "react";
 
 const Calculator = () => {
   const [input, setInput] = useState('');
