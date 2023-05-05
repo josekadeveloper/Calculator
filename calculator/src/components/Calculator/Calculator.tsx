@@ -1,7 +1,8 @@
 import { useState } from "react";
 
 const Calculator = () => {
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState("");
+  const lastCharacter = "|";
 
   const addInput = (val: any) => {
     setInput(input + val);
@@ -13,7 +14,7 @@ const Calculator = () => {
 
   return (
     <div className="calculator-container">
-      <div className="result">{input}</div>
+      <div className="result">{input}<span>{lastCharacter}</span></div>
       <button className="button" onClick={() => addInput(1)}>1</button>
       <button className="button" onClick={() => addInput(2)}>2</button>
       <button className="button" onClick={() => addInput(3)}>3</button>
