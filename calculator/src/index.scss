@@ -7,9 +7,10 @@ $foreground: #2d264b;
 
 body {
   font-family: monospace;
-  background: linear-gradient(35deg, #404040 51.03%, #FF9500);
+  background: linear-gradient(35deg, $secondary 51.03%, $primary);
   color: $foreground;
   padding: 0 30px;
+  margin: 0;
   height: 100vh;
   width: auto;
   display: flex;
@@ -19,6 +20,8 @@ body {
 .calculator-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   height: 700px;
   width: 500px;
   margin-top: 100px;
@@ -86,7 +89,7 @@ body {
 .modal-content {
   width: 300px;
   height: 200px;
-  background: linear-gradient(35deg, #404040 51.03%, #FF9500);
+  background: linear-gradient(35deg, $secondary 51.03%, $primary);
   color: $disabled;
   border: 3px solid $primary;
   border-radius: 4px;
@@ -117,9 +120,100 @@ body {
   cursor: pointer;
 }
 
+.button:hover {
+  background-color: $primary;
+}
+
 .button:last-child {
   width: 100%;
   align-items: center;
   margin-top: 5px;
-  padding: 0 39px;
+}
+
+/* MOBILE */
+@media (max-width: 767px) {
+  .calculator-container {
+    height: 550px;
+    width: 300px;
+    margin-top: 150px;
+  }
+
+  .result {
+    font-size: 50px;
+  }
+
+  .button {
+    height: 45px;
+    width: 50px;
+    font-size: 15px;
+  }
+
+  .button:last-child {
+    margin: 0;
+  }
+}
+
+/* IPAD */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .calculator-container {
+    height: 550px;
+    margin-top: 150px;
+    margin-right: auto;
+  }
+
+  .button {
+    height: 45px;
+    font-size: 15px;
+  }
+
+  .button:last-child {
+    margin: 0;
+  }
+}
+
+/* NEST */
+@media (min-width: 1024px) and (min-height: 600px) {
+  .calculator-container {
+    height: 460px;
+    margin-top: 40px;
+  }
+
+  .button {
+    height: 35px;
+    font-size: 15px;
+  }
+
+  .button:last-child {
+    margin: 0;
+  }
+}
+
+/* NEST HUB MAX */
+@media (min-width: 1024px) and (min-height: 800px) {
+  .calculator-container {
+    height: 650px;
+    margin-top: 50px;
+  }
+
+  .button {
+    height: 60px;
+    font-size: 25px;
+  }
+}
+
+/* DESKTOP */
+@media (min-width: 1920px) and (min-height: 900px) {
+  .calculator-container {
+    height: 800px;
+    margin-top: 50px;
+  }
+
+  .button {
+    height: 80px;
+    font-size: 25px;
+  }
+
+  .button:last-child {
+    margin: 0;
+  }
 }
