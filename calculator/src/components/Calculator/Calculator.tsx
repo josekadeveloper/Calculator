@@ -1,6 +1,8 @@
 import { useState } from "react";
 import ReactModal from "react-modal";
 import { FaTimes } from 'react-icons/fa';
+import './Calculator.scss';
+import Button from "../Button/Button";
 
 const Calculator = () => {
   const [input, setInput] = useState("");
@@ -76,53 +78,21 @@ const Calculator = () => {
           let buttonElement;
 
           if (button === "ON") {
-            buttonElement = (
-              <button key={index} className="button" onClick={() => turnOn()}>
-                {button}
-              </button>
-            );
+            buttonElement = <Button customKey={index} value={button} onClick={() => turnOn()}/>;
           } else if (button === "OFF") {
-            buttonElement = (
-              <button key={index} className="button" onClick={() => turnOff()} disabled={!active}>
-                {button}
-              </button>
-            );
+            buttonElement = <Button customKey={index} value={button} onClick={() => turnOff()} disabled={!active}/>;
           } else if (button === "DEL") {
-            buttonElement = (
-              <button key={index} className="button" onClick={() => handleDelete()} disabled={!active}>
-                {button}
-              </button>
-            );
+            buttonElement = <Button customKey={index} value={button} onClick={() => handleDelete()} disabled={!active}/>;
           } else if (button === "√") {
-            buttonElement = (
-              <button key={index} className="button" onClick={() => handleSqrt()} disabled={!active}>
-                {button}
-              </button>
-            );
+            buttonElement = <Button customKey={index} value={button} onClick={() => handleSqrt()} disabled={!active}/>;
           } else if (button === "C") {
-            buttonElement = (
-              <button key={index} className="button" onClick={() => setInput("")} disabled={!active}>
-                {button}
-              </button>
-            );
+            buttonElement = <Button customKey={index} value={button} onClick={() => setInput("")} disabled={!active}/>;
           } else if (button === "=") {
-            buttonElement = (
-              <button key={index} className="button" onClick={() => expCalculate()} disabled={!active}>
-                {button}
-              </button>
-            );
+            buttonElement = <Button customKey={index} value={button} onClick={() => expCalculate()} disabled={!active}/>;
           } else if (button === "x²") {
-            buttonElement = (
-              <button key={index} className="button" onClick={() => handlePow()} disabled={!active}>
-                {button}
-              </button>
-            );
+            buttonElement = <Button customKey={index} value={button} onClick={() => handlePow()} disabled={!active}/>;
           } else {
-            buttonElement = (
-              <button key={index} className="button" onClick={() => addInput(button)} disabled={!active}>
-                {button}
-              </button>
-            );
+            buttonElement = <Button customKey={index} value={button} onClick={() => addInput(button)} disabled={!active}/>;
           }
 
           return buttonElement;
