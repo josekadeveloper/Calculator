@@ -1,6 +1,6 @@
 # Calculator
 
-[app_logo]: prototype.PNG
+[app_logo]: prototype.png
 ![app_logo]
 
 Calculator that represents most of the functions of a traditional scientific calculator,
