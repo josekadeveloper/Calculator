@@ -7,10 +7,10 @@ developed in React.ts and Sass
 
 ![app](/Api.gif)
 ### Built With
-[![React](https://img.shields.io/badge/React-FFFFFF?style=for-the-badge&logo=react&logoColor=#7DDFFF
+[![React](https://img.shields.io/badge/React-22272E?style=for-the-badge&logo=react&logoColor=#7DDFFF
 )](https://es.react.dev/)
-[![Typescript](https://img.shields.io/badge/Typescript-FFFFFF?style=for-the-badge&logo=typescript&logoColor=#2D79C7)](https://www.typescriptlang.org/)
-[![Sass](https://img.shields.io/badge/Sass-FFFFFF?style=for-the-badge&logo=sass&logoColor=#C76395
+[![Typescript](https://img.shields.io/badge/Typescript-22272E?style=for-the-badge&logo=typescript&logoColor=#2D79C7)](https://www.typescriptlang.org/)
+[![Sass](https://img.shields.io/badge/Sass-22272E?style=for-the-badge&logo=sass&logoColor=#C76395
 )](https://sass-lang.com/)
 
 
