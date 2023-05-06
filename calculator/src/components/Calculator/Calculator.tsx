@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-eval
 import { useState } from "react";
 import ReactModal from "react-modal";
 import { FaTimes } from 'react-icons/fa';
