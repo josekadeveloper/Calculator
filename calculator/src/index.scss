@@ -31,11 +31,13 @@ body {
   0% {
     color: transparent;
   }
+
   50% {
     color: transparent;
   }
+
   100% {
-    color: #9c9c9c;
+    color: $disabled
   }
 }
 
@@ -44,16 +46,63 @@ body {
   height: 80px;
   padding: 2px;
   margin-bottom: 5px;
-  background-color: #404040;
-  color: #9c9c9c;
+  background-color: $secondary;
+  color: $disabled;
   font-size: 60px;
   text-align: left;
   padding-left: 10px;
   padding-top: 10px;
-  border: 0.5px solid #FF9500;
+  border: 0.5px solid $primary;
   border-radius: 5px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
   span {
     animation: blink 1s infinite;
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  width: 300px;
+  height: 200px;
+  background: linear-gradient(35deg, #404040 51.03%, #FF9500);
+  color: $disabled;
+  border: 3px solid $primary;
+  border-radius: 4px;
+  padding: 20px;
+  font-size: 20px;
+  font-family: system-ui;
+  text-align: center;
+
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
   }
 }
 

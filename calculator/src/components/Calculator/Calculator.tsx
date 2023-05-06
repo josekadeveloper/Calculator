@@ -1,8 +1,11 @@
 import { useState } from "react";
+import ReactModal from "react-modal";
+import { FaTimes } from 'react-icons/fa';
 
 const Calculator = () => {
   const [input, setInput] = useState("");
   const [active, setActive] = useState(false);
+  const [showModal, setShowModal] = useState(false);
   const lastCharacter = "|";
 
   const addInput = (val: any) => {
@@ -10,7 +13,7 @@ const Calculator = () => {
   };
 
   const expCalculate = () => {
-    input ? setInput(eval(input)) : alert("Please enter values to perform calculations.");
+    input ? setInput(eval(input)) : openModal();
   };
 
   const turnOn = () => {
@@ -39,6 +42,16 @@ const Calculator = () => {
     setInput(input.slice(0, -1));
   }
 
+  const openModal = () => {
+    setShowModal(true);
+    document.body.classList.add('modal-open');
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+    document.body.classList.remove('modal-open');
+  };
+
   const buttons = [
     "ON", "OFF", "DEL", "C",
     "(", ")", "√", "x²",
@@ -51,6 +64,13 @@ const Calculator = () => {
   return (
     <div className="calculator-container">
       {<div className="result"> {input}<span>{active ? lastCharacter : ""}</span></div>}
+      <ReactModal className="modal" overlayClassName="modal-overlay" isOpen={showModal} onRequestClose={() => setShowModal(false)}>
+        <div className="modal-content">
+          <h2>TIP</h2>
+          <p>To display the result of any operation you need to select numbers and operator</p>
+          <button className="close-button" onClick={closeModal}><FaTimes /></button>
+        </div>
+      </ReactModal >
       <div className="buttons">
         {buttons.map((button, index) => {
           let buttonElement;
