@@ -1,10 +1,18 @@
 # Calculator
 
-[app_logo]: prototype.png
-![app_logo]
-
 Calculator that represents most of the functions of a traditional scientific calculator,
 developed in React.ts and Sass
+
+### Features
+
+![app](/Api.gif)
+### Built With
+[![React](https://img.shields.io/badge/React-FFFFFF?style=for-the-badge&logo=react&logoColor=#7DDFFF
+)](https://es.react.dev/)
+[![Typescript](https://img.shields.io/badge/Typescript-FFFFFF?style=for-the-badge&logo=typescript&logoColor=#2D79C7)](https://www.typescriptlang.org/)
+[![Sass](https://img.shields.io/badge/Sass-FFFFFF?style=for-the-badge&logo=sass&logoColor=#C76395
+)](https://sass-lang.com/)
+
 
 Developer: José Carlos De La Rosa Methvin
 
