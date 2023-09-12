@@ -1,7 +1,6 @@
 # Calculator
 
-Calculator that represents most of the functions of a traditional scientific calculator,
-developed in React.ts and Sass
+That represents most of the functions of a traditional scientific calculator
 
 ### Features
 
